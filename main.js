@@ -9,11 +9,23 @@ const app = Vue.createApp({
       onSale: true,
       details: ["80% cotton", "20% polyester"],
       variants: [
-        { id: 1, color: "green" },
-        { id: 2, color: "blue" },
+        { id: 1, color: "green", image: "./assets/images/socks_green.jpg" },
+        { id: 2, color: "blue", image: "./assets/images/socks_blue.jpg" },
       ],
       sizes: ["S", "M", "L"],
+      cart: 0,
     };
+  },
+  methods: {
+    addToCart() {
+      this.cart += 1;
+    },
+    updateImage(variantImage) {
+      this.image = variantImage;
+    },
+    toggleStockStatus() {
+      this.inStock = !this.inStock;
+    },
   },
 });
 
