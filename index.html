@@ -25,11 +25,17 @@
             <h4 v-if="onSale" style="color: red">On Sale!</h4>
             <p v-if="inStock">In Stock</p>
             <p v-else="inStock">Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{detail}}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">{{variant.color}}</div>
+            <div style="display: flex; gap: 10px">
+              <p v-for="size in sizes">{{size}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Import Js -->
     <script src="./main.js"></script>
   </body>
